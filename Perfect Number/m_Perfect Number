@@ -1,0 +1,28 @@
+class Solution {
+public:
+    bool checkPerfectNumber(int num) {
+        
+        int count = 1;
+        int sum = 0;
+        while(true){
+            if(count * count <= num && (count + 1) * (count + 1) > num){
+                break;
+            }
+            count++;
+        }
+        
+        for(int i = 1; i <= count; i++){
+            if(num%i == 0){
+                if(i!=1){
+                    sum += i;
+                    sum += (num/i);
+                }
+                else
+                    if(i!= num)
+                        sum += i;
+            }
+        }
+        
+        return sum == num;
+    }
+};

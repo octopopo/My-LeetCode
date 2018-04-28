@@ -12,7 +12,7 @@ public:
         if(!node1 && !node2){
             return true;
         }
-        else if((!node1 && node2) || (node1 && !node2))
+        else if(!node1 || !node2)
             return false;
         else{
             if(node1->val != node2->val)

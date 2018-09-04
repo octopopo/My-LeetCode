@@ -5,7 +5,6 @@ public:
         int tempStateProcess = 1;
         int originalDi = divisor;
         int originalDD = dividend;
-        
         if(divisor < 0)
         {
             if(dividend > 0)
@@ -64,13 +63,15 @@ public:
         {
             m_map[divisor] = tempStateProcess;
             lastDiv = divisor;
-            tempStateProcess *= divisor;
-            divisor *= divisor;
-            if(lastDiv != divisor/lastDiv)
+            tempStateProcess += tempStateProcess;
+            divisor += divisor;
+            cout << divisor << endl;
+            if(divisor <= 0)
             {
                 break;
             }
         }
+    
         
         for(auto i = m_map.rbegin(); i!= m_map.rend(); i++)
         {
